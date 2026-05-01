@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/MLFlow/MLFlow/mlruns/6a09804ca39847938556a9ba174d3b96/artifacts
+end_time: 1777655039440
+entry_point_name: ''
+experiment_id: '710241844552300217'
+lifecycle_stage: active
+run_id: 6a09804ca39847938556a9ba174d3b96
+run_name: marvelous-ape-905
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777655037185
+status: 3
+tags: []
+user_id: runner
