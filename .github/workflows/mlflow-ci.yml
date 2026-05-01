@@ -8,6 +8,9 @@ jobs:
   ml_pipeline:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Clonar repositorio
         uses: actions/checkout@v3
@@ -27,6 +30,14 @@ jobs:
 
       - name: Validar desempeno del modelo
         run: make validate
+
+      - name: Guardar mlruns en el repositorio
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Actions"
+          git add mlruns/
+          git diff --staged --quiet || git commit -m "Actualizar mlruns con resultados del entrenamiento"
+          git push
 
       - name: Subir modelo como artefacto
         if: success()
